@@ -1,0 +1,53 @@
+//1
+float x = 123456789f;
+while (x == x+1);
+///////////////////////////////////
+//2
+public class check {
+public static void main(String args[]) {
+	float x = 123456789f, y = 123456785f, f=0;     
+	f=x-y;
+	System.out.println(f);
+	}
+
+}
+////////////////////////////////////////////
+//3
+float a = 1.0f;
+float b = 3.0f;
+double x = (a/b - (float)(1.0/3.0)) * 1.0e9;
+/////////////////////////////////////////////
+//4
+
+public class mistake {
+	public static void main(String args[]) {
+		func(0.566f, 0.5666f, 3);
+		
+	}
+
+public static void func(float f1, float f2, int i) {
+	
+	float q =  (float)(Math.round(f1 * Math.pow(10, i)) / Math.pow(10, i)),
+	w =  (float)(Math.round(f2 * Math.pow(10, i)) / Math.pow(10, i)); 
+	boolean b1 = Float.isNaN(q),
+	b2 = Float.isNaN(w);
+	
+	if ((b1==true) && (b2==true))
+		System.out.println(b1==b2);
+	else
+		System.out.println(q == w);
+	
+}
+}
+/////////////////////////////////////
+//5
+public static void func2(float f1, float f2) {
+
+	int i1 = Float.floatToIntBits(f1),
+	i2 = Float.floatToIntBits(f2);
+	System.out.println(i1 == i2);
+	
+}
+/////////////////////////////////////
+
+
