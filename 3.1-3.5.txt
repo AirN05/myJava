@@ -49,5 +49,29 @@ public static void func2(float f1, float f2) {
 	
 }
 /////////////////////////////////////
+//6
+import java.math.BigDecimal;
 
+public class name {
+	public static void main(String[] args) {
+		float sum = 500; // 500 руб. на счете
+		float percent = 0.00000001f; // 0.000001% ежемесячно
+		float per = (1+percent*12)*sum;
+		// Считаем проценты за год
+		for(int i = 1; i <= 12; i++)
+		sum += sum*percent;
+		System.out.println("Сумма на счете через год f: " + per);
+		System.out.println("Сумма на счете через год: " + sum);
+		
+		BigDecimal summ = new BigDecimal(500.0f);
+		BigDecimal perc = new BigDecimal(0.00000001f);
+		
+		for(int i = 1; i <= 12; i++)
+			summ=summ.add(summ.multiply(perc));
+		
+		System.out.println("Сумма на счете через год b: " + summ);
+		
+	}
+
+}
 
