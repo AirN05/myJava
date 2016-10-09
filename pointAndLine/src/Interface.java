@@ -16,7 +16,7 @@ public class Interface {
 				for (int i=0; i<count; i++)
 				{
 					
-					line.createLine();}
+					line.addPoint();}
 				}
 		else
 			{
@@ -35,7 +35,7 @@ public class Interface {
 	{
 	
 		
-		System.out.println(line.showLine(line));
+		System.out.println(line.showLine());
 	}
 	
 	
@@ -45,23 +45,11 @@ public class Interface {
 	}
 	
 	
-	public void findPoint(Line line)
+	public void find(Line line)
 	{
-		Point p=new Point();
-		p.createPoint();
-		int s = 0;
-		for (Point po: line.getArr())
-			{
-			
-			if (po.isSame(p)==true)
-				{
-					s = line.findVertex(po);
-					System.out.println("Найденная вершина - "+s);
-				}
-				
-			}
-		
+		line.findPoint();
 	}
+	
 	public static void main(String args[]) {
 	
 		
@@ -75,13 +63,13 @@ public class Interface {
 		int choose = in.nextInt();
 		switch(choose)
 		{
-		case 1: line.createLine();
+		case 1: line.addPoint();
 			break;
 		case 2: inter.showPoligon(line);
 			break;
 		case 3: inter.showDistanse(line);
 			break;
-		case 4: inter.findPoint(line);
+		case 4: inter.find(line);
 			break;
 		case 5: System.exit(0); 
 			break;

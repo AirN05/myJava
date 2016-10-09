@@ -19,6 +19,7 @@ public class Point {
 		this.x=x;
 		this.y=y;
 	}
+	
 		
 	Point()
 	{
@@ -42,9 +43,12 @@ public class Point {
 	
 	}
 	
-	public String showPoint(Point point)
+	
+	
+	public String toString()
 	{
-		return "("+point.getX()+";"+point.getY()+")";
+		
+		return "("+ this.getX()+";"+this.getY()+")";
 		
 	}
 	
@@ -54,7 +58,7 @@ public class Point {
 		this.y = point.getY();
 	}
 	
-	public boolean isSame(Point point) 
+	public boolean equals(Point point) 
 	{
         if(this.x == point.getX() && this.y == point.getY()) 
         {

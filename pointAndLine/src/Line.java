@@ -9,44 +9,40 @@ public class Line {
 		
 	}
 	
-	public ArrayList <Point> getArr()
-	{
-		return arr;
-	}
 	
-	public void createLine() //добавление точки в конец
+	public void addPoint() //добавление точки в конец
 	{
 		Point point = new Point();
 		point.createPoint();
-		getArr().add(point);
+		arr.add(point);
 	}
 	
 	public void createZeroLine() //добавление точки в конец
 	{
 		Point point = new Point(0,0);
 		point.createPoint();
-		getArr().add(point);
+		arr.add(point);
 	}
 	
 	
 	
 	public Point getPoint(int i) //извлечение по индексу
 	{
-		return getArr().get(i);
+		return arr.get(i);
 	}
 	
 	public int findVertex(Point point)//ищем вершину с такими же координатами
 	{
-		int index = getArr().indexOf(point);
+		int index = arr.indexOf(point);
 		return index;
 	}
 	
-	public String showLine(Line line)//вывод строки
+	public String showLine()//вывод строки
 	{
 		String poligon = "";
-		for (Point p: line.getArr())
+		for (Point p: arr)
 		{
-			poligon+=p.showPoint(p)+"-";
+			poligon+=p.toString()+"-";
 		}
 		
 		return poligon;
@@ -54,15 +50,34 @@ public class Line {
 	
 	public double calcLong(Line line)//считаем длину
 	{
+		
 		double sum=0;
-		for (Point p: line.getArr())
+		
+		for(int i=0; i<arr.size()-1; i++)
 		{
-			sum+=p.findDistance(p);
+			sum+=getPoint(i).findDistance(getPoint(i+1));
+
 		}
 		
 		return sum;
 	}
 	
-	
+	public void findPoint()
+	{
+		Point p=new Point();
+		p.createPoint();
+		int s = 0;
+		for (Point po: arr)
+			{
+			
+			if (po.equals(p)==true)
+				{
+					s = findVertex(po);
+					System.out.println("Найденная вершина - "+s);
+				}
+				
+			}
+		
+	}
 
 }
