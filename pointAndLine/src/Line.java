@@ -62,7 +62,7 @@ public class Line {
 		return sum;
 	}
 	
-	public void findPoint()
+	public String findPoint()
 	{
 		Point p=new Point();
 		p.createPoint();
@@ -73,11 +73,10 @@ public class Line {
 			if (po.equals(p)==true)
 				{
 					s = findVertex(po);
-					System.out.println("Найденная вершина - "+s);
 				}
 				
 			}
-		
+		return "Найденная вершина - "+s;
 	}
 
 }

@@ -47,7 +47,7 @@ public class Interface {
 	
 	public void find(Line line)
 	{
-		line.findPoint();
+		System.out.println(line.findPoint());
 	}
 	
 	public static void main(String args[]) {
